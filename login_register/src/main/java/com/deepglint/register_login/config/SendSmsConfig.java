@@ -18,13 +18,13 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName SendSmsConfig
- * @Description TODO
+ * @Description 发送短信
  * @author: cdf
- * @Date: 2021-02-15 23:41
  **/
 @Component
 @Slf4j
 public class SendSmsConfig {
+
     @Autowired
     private RedisUtil redisUtil;
 
@@ -41,17 +41,17 @@ public class SendSmsConfig {
             int times = (int) redisUtil.getHash(telephone, "times");
             if (times < 3) {
                 //覆盖上一次的验证码
-                redisUtil.hset(telephone,"code",code, TimeUnit.SECONDS.toSeconds(10000));
+                redisUtil.hset(telephone,"code",code, 1000 * 60 * 5);
                 //此手机号验证码发送次数 incrby +1
                 redisUtil.haIncr(telephone, "times", 1);
             } else if(times == 3){
-                //验证码发送次数等于三次，2小时时间限制
-                redisUtil.expire(telephone,TimeUnit.HOURS.toHours(2));
-                return JSON.toJSONString("对不起，您已连续发送超过三次，请五分钟后再试");
+                //验证码发送次数等于三次，30分钟时间限制
+                redisUtil.expire(telephone, 60L * 30);
+                return JSON.toJSONString("对不起，您已连续发送超过三次，请30分钟后再试");
             }
         } else {
             //正常，设置验证码的过期时间
-            redisUtil.hset(telephone, "code", code, TimeUnit.SECONDS.toSeconds(10000));
+            redisUtil.hset(telephone, "code", code, 1000 * 60 * 5);
             redisUtil.hset(telephone, "times", 1);
             log.info("手机号: {}, 验证码: {}",telephone,code);
         }
