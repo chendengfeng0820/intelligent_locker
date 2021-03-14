@@ -60,7 +60,7 @@ public class SendSmsConfig {
          * 阿里云发送短信
          */
         CommonResponse response=null;
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FeeUqB8dQC9j2pFg44v", "cKOuyG8C6Zqr7t8oxh67vfzaiSdkOd");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "xxx", "xxx");
         IAcsClient client = new DefaultAcsClient(profile);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
