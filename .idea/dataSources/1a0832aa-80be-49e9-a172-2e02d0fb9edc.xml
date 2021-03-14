@@ -1254,100 +1254,106 @@
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="316" parent="299" name="PRIMARY">
+    <column id="316" parent="299" name="user_id">
+      <Position>5</Position>
+      <Comment>用户id</Comment>
+      <DataType>int|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="317" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_cabinet_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="317" parent="300" name="pk_courier_id">
+    <column id="318" parent="300" name="pk_courier_id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="300" name="uk_courier_telephone">
+    <column id="319" parent="300" name="uk_courier_telephone">
       <Position>2</Position>
       <Comment>快递员手机号</Comment>
       <DataType>char(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="300" name="real_name">
+    <column id="320" parent="300" name="real_name">
       <Position>3</Position>
       <Comment>真实姓名</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="300" name="password">
+    <column id="321" parent="300" name="password">
       <Position>4</Position>
       <Comment>密码</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="300" name="identity_id">
+    <column id="322" parent="300" name="identity_id">
       <Position>5</Position>
       <Comment>身份证号</Comment>
       <DataType>char(18)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="300" name="gmt_create">
+    <column id="323" parent="300" name="gmt_create">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="323" parent="300" name="modified">
+    <column id="324" parent="300" name="modified">
       <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="324" parent="300" name="PRIMARY">
+    <key id="325" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_courier_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="325" parent="301" name="pk_order_id">
+    <column id="326" parent="301" name="pk_order_id">
       <Position>1</Position>
       <Comment>订单id  雪花算法生成</Comment>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="301" name="from">
+    <column id="327" parent="301" name="from">
       <Position>2</Position>
       <Comment>包裹来源 储物柜号</Comment>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="301" name="to">
+    <column id="328" parent="301" name="to">
       <Position>3</Position>
       <Comment>包裹转送处  储物柜号</Comment>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="301" name="expect_time">
+    <column id="329" parent="301" name="expect_time">
       <Position>4</Position>
       <Comment>期望送达时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="301" name="order_time">
+    <column id="330" parent="301" name="order_time">
       <Position>5</Position>
       <Comment>下单时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="301" name="status">
+    <column id="331" parent="301" name="status">
       <Position>6</Position>
       <Comment>订单状态 (0 还没接单, 1 已接单, 2 正在派送)</Comment>
       <DataType>tinyint|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="331" parent="301" name="PRIMARY">
+    <key id="332" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_order_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="332" parent="302" name="pk_user_id">
+    <column id="333" parent="302" name="pk_user_id">
       <Position>1</Position>
       <Comment>用户自增主键</Comment>
       <DataType>int|0s</DataType>
@@ -1355,98 +1361,98 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="302" name="uk_telephone">
+    <column id="334" parent="302" name="uk_telephone">
       <Position>2</Position>
       <Comment>用户手机号 11位</Comment>
       <DataType>char(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="302" name="app_name">
+    <column id="335" parent="302" name="app_name">
       <Position>3</Position>
       <Comment>应用内昵称</Comment>
       <DataType>varchar(15)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="302" name="password">
+    <column id="336" parent="302" name="password">
       <Position>4</Position>
       <Comment>用户密码</Comment>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="302" name="gmt_create">
+    <column id="337" parent="302" name="gmt_create">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="302" name="gmt_modified">
+    <column id="338" parent="302" name="gmt_modified">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="338" parent="302" name="user_uk_telephone_uindex">
+    <index id="339" parent="302" name="user_uk_telephone_uindex">
       <ColNames>uk_telephone</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="339" parent="302" name="PRIMARY">
+    <key id="340" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="340" parent="302" name="user_uk_telephone_uindex">
+    <key id="341" parent="302" name="user_uk_telephone_uindex">
       <ColNames>uk_telephone</ColNames>
       <UnderlyingIndexName>user_uk_telephone_uindex</UnderlyingIndexName>
     </key>
-    <column id="341" parent="303" name="pk_user_cabinet">
+    <column id="342" parent="303" name="pk_user_cabinet">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="303" name="user_id">
+    <column id="343" parent="303" name="user_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="303" name="cabinet_id">
+    <column id="344" parent="303" name="cabinet_id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="344" parent="303" name="user_cabinet_cabinet_id_uindex">
+    <index id="345" parent="303" name="user_cabinet_cabinet_id_uindex">
       <ColNames>cabinet_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="345" parent="303" name="PRIMARY">
+    <key id="346" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_user_cabinet</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="346" parent="303" name="user_cabinet_cabinet_id_uindex">
+    <key id="347" parent="303" name="user_cabinet_cabinet_id_uindex">
       <ColNames>cabinet_id</ColNames>
       <UnderlyingIndexName>user_cabinet_cabinet_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="347" parent="304" name="pk_user_order_id">
+    <column id="348" parent="304" name="pk_user_order_id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="304" name="user_id">
+    <column id="349" parent="304" name="user_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="304" name="order_id">
+    <column id="350" parent="304" name="order_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="350" parent="304" name="PRIMARY">
+    <key id="351" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pk_user_order_id</ColNames>
       <Primary>1</Primary>
