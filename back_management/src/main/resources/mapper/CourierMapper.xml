@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deepglint.back_management.mapper.CourierMapper">
+
+    <resultMap id="CourierMap" type="Courier">
+        <id property="CourierId" column="pk_courier_id"></id>
+        <result property="courierTelephone" column="uk_courier_telephone"/>
+        <result property="realName" column="real_name"/>
+        <result property="password" column="password"/>
+        <result property="identityId" column="identityId"/>
+        <result property="createTime" column="gmt_create"/>
+        <result property="modifyTime" column="gmt_modified"/>
+    </resultMap>
+
+    <insert id="insertCourier" keyColumn="pk_courier_id" keyProperty="CourierId">
+        insert into courier(uk_courier_telephone, real_name, password, identity_id, gmt_create) values
+        (#{courierTelephone}, #{realName}, #{password}, #{identityId}, #{createTime})
+    </insert>
+
+    <delete id="deleteCourier">
+        delete from courier where pk_courier_id = #{courierId}
+    </delete>
+
+    <update id="updateCourier" parameterType="com.deepglint.api.pojo.Courier">
+        update courier set uk_courier_telephone = #{courierTelephone}, real_name = #{realName}, password = #{password}, identity_id = #{identityId},
+        gmt_create = #{modifyTime}
+    </update>
+
+    <select id="selectCourier" resultMap="CourierMap">
+        select * from courier where pk_courier_id = #{courierId}
+    </select>
+
+    <select id="getAllCourier" resultMap="CourierMap" resultType="com.deepglint.api.pojo.Courier">
+        select * from courier
+    </select>
+</mapper>

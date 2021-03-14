@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deepglint.access_baggage.mapper.ExpressMapper" >
+
+    <resultMap id="userMap" type="User">
+        <id column="pk_user_id" property="userId"/>
+        <result column="uk_telephone" property="telephone"/>
+        <result column="app_name" property="appName"/>
+    </resultMap>
+
+    <select id="getUserInfo" resultType="com.deepglint.api.pojo.User" resultMap="userMap">
+        select pk_user_id,uk_telephone,app_name from user where pk_user_id = #{userId}
+    </select>
+
+    <insert id="insertOrder" parameterType="com.deepglint.api.pojo.Order">
+        insert into `order` (pk_order_id, `from`, `to`, expect_time, order_time, status) values (
+        #{orderId}, #{from}, #{to}, #{expectTime}, #{orderTime}, 0)
+    </insert>
+
+    <insert id="insertUserOrder" useGeneratedKeys="true" keyColumn="pk_user_order_id">
+        insert into  user_order (user_id, order_id) values (#{userId}, #{orderId})
+    </insert>
+
+</mapper>
