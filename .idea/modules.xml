@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/access_baggage/access_baggage.iml" filepath="$PROJECT_DIR$/access_baggage/access_baggage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back_management/back_management.iml" filepath="$PROJECT_DIR$/back_management/back_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/board_api/board_api.iml" filepath="$PROJECT_DIR$/board_api/board_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka_7001/eureka_7001.iml" filepath="$PROJECT_DIR$/eureka_7001/eureka_7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka_7002/eureka_7002.iml" filepath="$PROJECT_DIR$/eureka_7002/eureka_7002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka_7003/eureka_7003.iml" filepath="$PROJECT_DIR$/eureka_7003/eureka_7003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fast_mail/fast_mail.iml" filepath="$PROJECT_DIR$/fast_mail/fast_mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intelligent_locker.iml" filepath="$PROJECT_DIR$/intelligent_locker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/login_register/login_register.iml" filepath="$PROJECT_DIR$/login_register/login_register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
+    </modules>
+  </component>
+</project>

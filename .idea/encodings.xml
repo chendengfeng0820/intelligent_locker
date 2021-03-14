@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/access_baggage" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back_management" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/board_api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka_7001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka_7002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka_7003" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fast_mail" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/login_register" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redis" charset="UTF-8" />
+  </component>
+</project>

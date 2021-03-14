@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deepglint.access_baggage.mapper.StoreMapper" >
+    
+    <resultMap id="storeMap" type="Cabinet">
+        <id column="pk_cabinet_id" property="cabinetId"/>
+        <result column="is_using" property="using"/>
+        <result column="start_time" property="startTime"/>
+        <result column="lastend_time" property="stopTime"/>
+    </resultMap>
+
+    <select id= "getReserve" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">
+        select * from cabinet where pk_user_id = #{userId} and is_using = 2;
+    </select>
+
+    <select id= "using" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">
+        select * from cabinet where pk_user_id = #{userId} and is_using = 1;
+    </select>
+
+    <select id= "getAll" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">
+        select * from cabinet;
+    </select>
+    
+    <insert id= "store" parameterType="com.deepglint.api.pojo.Cabinet">
+        insert into cabinet (pk_cabinet_id, is_using, start_time, user_id) values (
+        #{cabinetId},1,#{startTime},#{userId})
+    </insert>
+
+    <update id= "modifyCabinet" >
+        update cabinet set is_using = 0, stop_time = #{stopTime}
+        where cabinet.pk_cabinet_id = #{cabinetId}
+    </update>
+
+    <delete id="deleteCabinet" >
+        delete from user_cabinet where cabinet_id = #{cabinetId}
+    </delete>
+
+
+</mapper>

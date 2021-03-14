@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deepglint.back_management.mapper.UserMapper">
+
+    <resultMap id="UserMap" type="User">
+        <id property="userId" column="pk_user_id"></id>
+        <result property="telephone" column="uk_telephone"/>
+        <result property="appName" column="app_name"/>
+        <result property="password" column="password"/>
+        <result property="createTime" column="gmt_create"/>
+        <result property="modifyTime" column="gmt_modified"/>
+    </resultMap>
+
+    <insert id="insertUser" keyColumn="pk_user_id" keyProperty="userId">
+        insert into user(uk_telephone, app_name, password, gmt_create) VALUES
+        (#{telephone}, #{appName}, #{password}, #{createTime})
+    </insert>
+
+    <delete id="deleteUser">
+        delete from user where pk_user_id = #{userId}
+    </delete>
+
+    <update id="updateUser" parameterType="com.deepglint.api.pojo.User">
+        update user set app_name = #{appName}, uk_telephone = #{telephone}, password = #{password}, gmt_modified = #{modifyTime}
+        where pk_user_id = #{userId}
+    </update>
+
+    <select id="selectUser" resultMap="UserMap">
+        select pk_user_id,uk_telephone,app_name,password,gmt_create,gmt_modified from user where pk_user_id = #{userId}
+    </select>
+    
+    <select id="getAllUser" resultMap="UserMap" resultType="com.deepglint.api.pojo.User">
+        select * from user
+    </select>
+</mapper>
