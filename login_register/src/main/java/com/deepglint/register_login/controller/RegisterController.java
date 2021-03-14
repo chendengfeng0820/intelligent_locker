@@ -18,7 +18,6 @@ import java.util.List;
  * @ClassName RegisterController
  * @Description 注册
  * @author: cdf
- * @Date: 2021-02-16 09:39
  **/
 @RestController
 @Slf4j
@@ -51,6 +50,7 @@ public class RegisterController {
             log.info("发送成功：" + telephone);
             return JSON.toJSONString("已发送");
         } else {
+            log.error("验证码发送失败");
             return JSON.toJSONString("对不起，发送失败，请稍候重试");
         }
     }
