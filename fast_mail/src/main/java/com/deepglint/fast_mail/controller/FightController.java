@@ -58,7 +58,7 @@ public class FightController {
                 log.info("扣减成功, 剩余库存: {}", realStock);
 
                 // 将订单号发到消息队列  订单状态修改  通知用户
-                HashMap hashMap = new HashMap();
+                HashMap hashMap = new HashMap(1);
                 hashMap.put("orderId", orderId);
 //              kafkaTemplate.send("topic2", JSON.toJSONString(hashMap));
                 ListenableFuture future  = kafkaTemplate.send("topic2",JSON.toJSONString(hashMap));

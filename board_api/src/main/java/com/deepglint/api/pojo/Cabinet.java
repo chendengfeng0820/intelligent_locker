@@ -20,7 +20,9 @@ public class Cabinet implements Serializable {
 
     private int cabinetId;
     private int using;
+    private int userId;
     private Date startTime;
     private Date stopTime;
+    private int cabinetTotalId;
 
 }

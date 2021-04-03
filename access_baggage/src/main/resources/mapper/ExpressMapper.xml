@@ -15,8 +15,8 @@
     </select>
 
     <insert id="insertOrder" parameterType="com.deepglint.api.pojo.Order">
-        insert into `order` (pk_order_id, `from`, `to`, expect_time, order_time, status) values (
-        #{orderId}, #{from}, #{to}, #{expectTime}, #{orderTime}, 0)
+        insert into `order` (pk_order_id, `from`, `to`, expect_time, order_time, status, user_id) values (
+        #{orderId}, #{from}, #{to}, #{expectTime}, #{orderTime}, 0, #{userId})
     </insert>
 
     <insert id="insertUserOrder" useGeneratedKeys="true" keyColumn="pk_user_order_id">

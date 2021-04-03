@@ -2,7 +2,6 @@ package com.deepglint.access_baggage.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.deepglint.access_baggage.service.ExpressService;
-import com.deepglint.access_baggage.websocket.WebSocket;
 import com.deepglint.api.pojo.Order;
 import com.deepglint.api.pojo.User;
 import com.deepglint.api.util.SnowFlake;
@@ -40,12 +39,12 @@ public class ExpressController {
 		long expressId = snowFlake.nextId();
 		User user = expressService.getUserInfo(userId);
 		order.setOrderId(expressId);
+		order.setUserId(userId);
 		order.setExpectTime(new Timestamp(order.getExpectTime().getTime()));
 		order.setOrderTime(new Timestamp(order.getOrderTime().getTime()));
 		expressService.insertOrder(order);
-		expressService.insertUserOrder(userId, order.getOrderId());
 
-		HashMap<String, Object> hashMap = new HashMap<>();
+		HashMap<String, Object> hashMap = new HashMap<>(9);
 		hashMap.put("userId",user.getUserId());
 		hashMap.put("telephone",user.getTelephone());
 		hashMap.put("appName",user.getAppName());
@@ -57,7 +56,7 @@ public class ExpressController {
 		hashMap.put("status", order.getStatus());
         String result = JSON.toJSONString(hashMap);
         kafkaTemplate.send("topic1",result);
-		return result;
+		return "ok";
 	}
 
 }

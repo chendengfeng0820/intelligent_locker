@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deepglint.pre_store.mapper.AvailableCabinetMapper" >
+
+    <resultMap id="cabinetMap" type="Cabinet">
+        <id column="pk_cabinet_id" property="cabinetId"/>
+        <result column="is_using" property="using"/>
+        <result column="start_time" property="startTime"/>
+        <result column="stop_time" property="stopTime"/>
+        <result column="user_id" property="userId"/>
+        <result column="cabinet_total_id" property="cabinetTotalId"/>
+    </resultMap>
+
+
+    <select id="cabinetList" resultMap="cabinetMap">
+        select * from cabinet where cabinet_total_id = #{cabinetId}
+    </select>
+
+</mapper>

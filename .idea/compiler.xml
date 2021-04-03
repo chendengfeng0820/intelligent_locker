@@ -16,6 +16,7 @@
         <module name="fast_mail" />
         <module name="kafka" />
         <module name="login_register" />
+        <module name="pre_store" />
         <module name="redis" />
       </profile>
     </annotationProcessing>
@@ -31,6 +32,7 @@
       <module name="kafka" target="1.8" />
       <module name="kafka_demo" target="1.8" />
       <module name="login_register" target="1.8" />
+      <module name="pre_store" target="1.8" />
       <module name="redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>

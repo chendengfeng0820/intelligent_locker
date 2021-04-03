@@ -19,6 +19,7 @@
         <module>access_baggage</module>
         <module>fast_mail</module>
         <module>redis</module>
+        <module>pre_store</module>
     </modules>
 
     <groupId>com.deepglint</groupId>

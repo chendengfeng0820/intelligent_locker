@@ -12,11 +12,11 @@
     </resultMap>
 
     <select id= "getReserve" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">
-        select * from cabinet where pk_user_id = #{userId} and is_using = 2;
+        select * from cabinet where user_id = #{userId} and is_using = 2;
     </select>
 
     <select id= "using" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">
-        select * from cabinet where pk_user_id = #{userId} and is_using = 1;
+        select * from cabinet where user_id = #{userId} and is_using = 1;
     </select>
 
     <select id= "getAll" resultType="com.deepglint.api.pojo.Cabinet" resultMap="storeMap">

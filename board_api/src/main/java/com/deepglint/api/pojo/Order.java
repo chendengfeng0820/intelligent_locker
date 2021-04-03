@@ -24,4 +24,5 @@ public class Order implements Serializable {
 	private Date expectTime;
 	private Date orderTime;
 	private int status;
+	private int userId;
 }
