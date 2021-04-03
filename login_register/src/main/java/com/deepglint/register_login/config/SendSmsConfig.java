@@ -28,13 +28,9 @@ public class SendSmsConfig {
     @Autowired
     private RedisUtil redisUtil;
 
-    @Autowired
-    private CodeUtil codeUtil;
 
     public String sendSms(String telephone) {
-
-        // 获取验证码code
-        String code = codeUtil.generateCode();
+        String code  = "123";
 
         // redis手机号发送验证码次数限制
         if (redisUtil.hashKey(telephone)) {

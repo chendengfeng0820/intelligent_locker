@@ -2,8 +2,10 @@ package com.deepglint.pre_store.mapper;
 
 import com.deepglint.api.pojo.Cabinet;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,6 +18,12 @@ import java.util.List;
 @Repository
 public interface AvailableCabinetMapper {
 
-    public List<Cabinet> cabinetList(int cabinetTotalId);
+    List<Cabinet> cabinetList(int cabinetTotalId);
+
+    void subscribe(@Param("cabinetId") int cabinetId, @Param("userId")int userId, @Param("startTime") Date startTime);
+
+    void updateStatus(int cabinetId);
+
+    String sendMessage(int cabinetId);
 
 }
